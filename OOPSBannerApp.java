@@ -1,37 +1,64 @@
-
 /**
- * OOPSBannerApp UC3 – OOPS Banner Application (Use Case 3)
- *
- * This class extends the functionality of Use Case 2 by improving
- * the way the "OOPS" banner is constructed and displayed.
- * It utilizes the String.join() method to create each line
- * of the banner instead of using the + operator for string concatenation.
- *
- * This approach reduces intermediate String object creation
- * and improves memory efficiency and readability.
- *
- * @author Developer
- * @version 3.0
- */
 
-// Extend use case UC2 to use String.join() method to create each line
-// of the "OOPS" banner instead of concatenating strings using + operator.
+OOPSBannerApp UC4 – OOPS Banner Display Application
 
+
+
+
+This class demonstrates rendering the word "OOPS" as a banner
+
+using ASCII art composed of asterisks (*) and spaces. The banner
+
+is displayed line by line on the console.
+
+
+
+
+
+
+
+storing the banner lines inside a String array and printing
+
+them using a loop. This approach eliminates repetitive
+
+print statements and improves code readability and maintainability.
+
+
+
+
+
+
+
+The banner lines are constructed using the String.join() method
+
+to combine the characters for the letters O, O, P, and S.
+
+
+
+
+@author Developer
+
+@version 4
+*/
 public class OOPSBannerApp {
-
-    // Main method to run the banner display
-    // Each line corresponds to a row in the banner for O, O, P, S.
-    // Using String.join() for better readability and efficiency.
 
     public static void main(String[] args) {
 
-        System.out.println(String.join(" "," *****  "," *****  "," ****** "," ****** "));
-        System.out.println(String.join(" ","*     * ","*     * ","*     * ","*     * "));
-        System.out.println(String.join(" ","*     * ","*     * ","*     * ","*       "));
-        System.out.println(String.join(" ","*     * ","*     * ","******  "," *****  "));
-        System.out.println(String.join(" ","*     * ","*     * ","*       ","      * "));
-        System.out.println(String.join(" ","*     * ","*     * ","*       ","*     * "));
-        System.out.println(String.join(" "," *****  "," *****  ","*       "," *****  "));
-        
+        // Create String array to store banner lines
+        String[] lines = new String[7];
+
+        // Populate array using String.join()
+        lines[0] = String.join(" ", " *** ", " *** ", " ***** ", " ***** ");
+        lines[1] = String.join(" ", "*   *", "*   *", "*   * ", "*    ");
+        lines[2] = String.join(" ", "*   *", "*   *", "*   * ", "*    ");
+        lines[3] = String.join(" ", "*   *", "*   *", "***** ", " *** ");
+        lines[4] = String.join(" ", "*   *", "*   *", "*     ", "    *");
+        lines[5] = String.join(" ", "*   *", "*   *", "*     ", "*   *");
+        lines[6] = String.join(" ", " *** ", " *** ", "*     ", " *** ");
+
+        // Loop through array and print each line
+        for (String line : lines) {
+            System.out.println(line);
+        }
     }
 }
